@@ -1,0 +1,2 @@
+module OrderLaundryHelper
+end
