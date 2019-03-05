@@ -11,7 +11,6 @@
                     <th scope="col">Member name</th>
                     <th scope="col">Date order</th>
                     <th scope="col">Date finish order</th>
-                    <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,9 +20,6 @@
                       <td><%= order.member_name %></td>
                       <td><%= order.order_date_start %></td>
                       <td><%= order.order_date_end %></td>
-                      <td>
-                        <%= link_to '<i class="fa fa-eye"></i>'.html_safe, order_path(order), class: 'btn btn-secondary'%>
-                      </td>
                     </tr>
                     <% end %>
                 </tbody>
