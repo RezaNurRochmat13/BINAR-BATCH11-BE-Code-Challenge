@@ -1,0 +1,39 @@
+<%= render "include/top-nav" %>
+     <div class="container" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-header">Add Officers</div>
+            <div class="card-body">
+                <%= form_for @officer, url: {action: :create} do |f| %>   
+                    <div>   
+                        <p>   
+                        <%= "<div>#{@officer.errors.full_messages.first}</div>".html_safe if @officer.errors.any? %>   
+                        <div class="form-group">   
+                            <label>Officer name</label>   
+                            <%= f.text_field :officer_name, class: 'form-control' %>   
+                        </div>   
+                
+                        <div class="form-group">
+                            <label>Officer address</label>   
+                            <%= f.text_field :officer_address, class: 'form-control' %>   
+                        </div>   
+                
+                        <div class="form-group">   
+                            <label>Officer gender</label>   
+                            <%= f.text_field :officer_gender, class: 'form-control' %>   
+                        </div>
+                        <div class="form-group">   
+                            <label>Officer phone</label>   
+                            <%= f.text_field :officer_phone, class: 'form-control' %>   
+                        </div>
+                        </p>   
+                    </div>   
+                    <div class="form-group">
+                        <%= f.submit 'Create Officer', :class => 'btn btn-success'%>  
+                        <%= link_to 'Back', { controller: 'officer', action: 'index'}, class: 'btn btn-secondary'%>    
+                    </div>   
+                <% end %>   
+            </div>
+        </div>
+    </div>
+
+<%= render "include/bottom-nav" %>

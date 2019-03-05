@@ -1,0 +1,30 @@
+<%= render "include/top-nav" %>
+     <div class="container" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-header">Detail members</div>
+            <div class="card-body">
+                <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Member name</th>
+                    <th scope="col">member address</th>
+                    <th scope="col">Member phone</th>
+                    <th scope="col">Member status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td><%= @detailMember.member_name %></td>
+                    <td><%= @detailMember.member_address%></td>
+                    <td><%= @detailMember.member_phone%></td>
+                    <td><%= @detailMember.member_status%></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<%= render "include/bottom-nav" %>

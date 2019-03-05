@@ -1,0 +1,54 @@
+<%= render "include/top-nav" %>
+     <div class="container" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-header">Add Officers</div>
+            <div class="card-body">
+                <%= form_for @orders, url: {action: :create} do |f| %>   
+                    <div>   
+                        <p>   
+                        <%= "<div>#{@orders.errors.full_messages.first}</div>".html_safe if @orders.errors.any? %>   
+                        <div class="form-group">   
+                            <label>Member name</label>   
+                            <select class="form-control" name="member_id">
+                            <option>Select member</option>
+                                <% @member.each do |l| -%>
+                                    <option value="l.id"><%= l.member_name %></option>
+                                <% end %> 
+                            </select>  
+                        </div>   
+
+                        <div class="form-group">   
+                            <label>Officer name</label>   
+                            <select class="form-control" name="officer_id">
+                            <option>Select officer</option>
+                                <% @officer.each do |l| -%>
+                                    <option value="l.id"><%= l.officer_name %></option>
+                                <% end %> 
+                            </select>  
+                        </div> 
+                
+                        <div class="form-group">
+                            <label>Order Scale</label>   
+                            <%= f.text_field :order_scales_laundry, class: 'form-control' %>   
+                        </div>   
+                
+                        <div class="form-group">   
+                            <label>Order date</label>   
+                            <%= f.date_field :order_date_start, class: 'form-control' %>   
+                        </div>
+                        <div class="form-group">   
+                            <label>Order finish date</label>   
+                            <%= f.date_field :order_date_end, class: 'form-control' %>   
+                        </div>
+                        </p>   
+                    </div>   
+                    <div class="form-group">
+                        <%= f.submit 'Create Order', :class => 'btn btn-success'%>  
+                        <%= link_to 'Back', { controller: 'order', action: 'index'}, class: 'btn btn-secondary'%>    
+                    </div>   
+                <% end %>   
+            </div>
+        </div>
+    </div>
+
+<%= render "include/bottom-nav" %>

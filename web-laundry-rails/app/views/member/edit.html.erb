@@ -1,0 +1,39 @@
+<%= render "include/top-nav" %>
+     <div class="container" style="padding-top: 50px;">
+        <div class="card">
+            <div class="card-header">Update members</div>
+            <div class="card-body">
+                <%= form_for @member, url: {action: :update} do |f| %>   
+                    <div>   
+                        <p>   
+                        <%= "<div>#{@member.errors.full_messages.first}</div>".html_safe if @member.errors.any? %>   
+                        <div class="form-group">   
+                            <label>Member name</label>   
+                            <%= f.text_field :member_name, class: 'form-control' %>   
+                        </div>   
+                
+                        <div>   
+                            <label>Member address</label>   
+                            <%= f.text_field :member_address, class: 'form-control' %>   
+                        </div>   
+                
+                        <div>   
+                            <label>Member phone</label>   
+                            <%= f.text_field :member_phone, class: 'form-control' %>   
+                        </div>
+                        <div>   
+                            <label>Member status</label>   
+                            <%= f.text_field :member_status, class: 'form-control' %>   
+                        </div>
+                        </p>   
+                    </div>   
+                    <div>
+                        <%= f.submit 'Update Members', :class => 'btn btn-success'%>  
+                        <%= link_to 'Back', { controller: 'member', action: 'index'}, class: 'btn btn-secondary'%>    
+                    </div>   
+                <% end %>   
+            </div>
+        </div>
+    </div>
+
+<%= render "include/bottom-nav" %>

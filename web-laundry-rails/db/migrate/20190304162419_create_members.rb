@@ -4,7 +4,7 @@ class CreateMembers < ActiveRecord::Migration[5.2]
       t.string :member_code
       t.string :member_name
       t.string :member_address
-      t.integer :member_phone
+      t.string :member_phone
       t.string :member_status
 
       t.timestamps

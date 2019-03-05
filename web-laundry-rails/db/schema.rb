@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_163055) do
     t.string "member_code"
     t.string "member_name"
     t.string "member_address"
-    t.integer "member_phone"
+    t.string "member_phone"
     t.string "member_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
