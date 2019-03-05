@@ -1,12 +1,9 @@
 <%= render "include/top-nav" %>
      <div class="container" style="padding-top: 50px;">
         <div class="card">
-            <div class="card-header">Add Officers</div>
+            <div class="card-header">Add Orders</div>
             <div class="card-body">
-                <%= form_for @orders, url: {action: :create} do |f| %>   
-                    <div>   
-                        <p>   
-                        <%= "<div>#{@orders.errors.full_messages.first}</div>".html_safe if @orders.errors.any? %>   
+                <%= form_for @order, :url => {action: "createOrder"} do |f| %> 
                         <div class="form-group">   
                             <label>Member name</label>   
                             <select class="form-control" name="member_id">

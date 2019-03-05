@@ -6,18 +6,22 @@ class OrderController < ApplicationController
         joins("INNER JOIN members ON members.id=order_receiveds.member_id")
     end
 
+    def show
+        @orders = OrderReceived.find(params[:id])
+    end
+
     def new
         @member = Member.all
         @officer = Officer.all
-        @orders = OrderReceived.new
+        @order = OrderReceived.new
         
     end
 
-    def create
-        @orders = OrderReceived.new(order_params)
+    def createOrder
+        @orders = OrderReceived.create(order_params)
 
         if @orders.save
-            redirect_to :new
+            redirect_to :index
         end
     end
 
